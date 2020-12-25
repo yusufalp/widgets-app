@@ -12,10 +12,14 @@
   color: white;
 }
 
-.accordion { 
+.accordion {
   margin-left: 10px;
 }
 
-.accordion i{
+.accordion i {
   padding-right: 10px;
+}
+
+.hidden {
+  display: none;
 }
