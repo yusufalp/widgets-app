@@ -1,5 +1,6 @@
 import './App.css';
 import Accordion from './components/Accordion';
+import Search from './components/Search';
 
 const items = [
   {
@@ -24,6 +25,9 @@ function App() {
       </header>
       <div className='accordion'>
         <Accordion items={items} />
+      </div>
+      <div className='search'>
+        <Search />
       </div>
     </div>
   );
