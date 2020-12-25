@@ -1,14 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Accordion = (props) => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+
+  const titleClickHandle = (index) => {
+    index === activeIndex ? setActiveIndex(null) : setActiveIndex(index);
+  }
+
   const renderedItems = props.items.map((item, i) => {
     return (
       <div key={i}>
-        <h3 className='title'>
-          <i class="fas fa-chevron-circle-down"></i>
+        <h3
+          className='title'
+          onClick={() => titleClickHandle(i)}
+        >
+          <i className={`fas fa-chevron-circle-${i === activeIndex ? 'down' : 'right'}`}></i>
           {item.title}
         </h3>
-        <p>{item.content}</p>
+        <p className={i === activeIndex ? '' : 'hidden'}>{item.content}</p>
       </div>
     )
   })
