@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import './Accordion.css';
 
 const Accordion = (props) => {
   const [activeIndex, setActiveIndex] = useState(null);
-
 
   const titleClickHandle = (index) => {
     index === activeIndex ? setActiveIndex(null) : setActiveIndex(index);
