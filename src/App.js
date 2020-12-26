@@ -23,10 +23,10 @@ function App() {
       <header className="App-header">
         <h1>Widgets App</h1>
       </header>
-      <div className='accordion'>
+      <div className='component-on-home hidden'>
         <Accordion items={items} />
       </div>
-      <div className='search'>
+      <div className='component-on-home'>
         <Search />
       </div>
     </div>
