@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import Accordion from './components/Accordion';
 import Search from './components/Search';
-import Dropdown from './components/Dropdown';
+import Translate from './components/Translate';
 
 const items = [
   {
@@ -19,24 +19,7 @@ const items = [
   },
 ]
 
-const options = [
-  {
-    label: 'The Color Red',
-    value: 'red'
-  },
-  {
-    label: 'The Color Green',
-    value: 'green'
-  },
-  {
-    label: 'The Color Blue',
-    value: 'blue'
-  },
-]
-
 function App() {
-  const [selected, setSelected] = useState(options[0].value)
-
   return (
     <div className="App">
       <header className="App-header">
@@ -49,11 +32,7 @@ function App() {
         <Search />
       </div>
       <div className='component-on-home'>
-        <Dropdown
-          options={options}
-          selected={selected}
-          handleSelectedChange={setSelected}
-        />
+        <Translate />
       </div>
     </div>
   );
