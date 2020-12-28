@@ -3,11 +3,8 @@ import React from 'react';
 const Dropdown = (props) => {
   const renderedOptions = props.options.map((option, i) => {
     return (
-      <option
-        key={i}
-        value={option.value}
-      >
-        {option.value}
+      <option key={i} value={option.value}>
+        {option.label}
       </option>
     );
   });
@@ -15,16 +12,11 @@ const Dropdown = (props) => {
   return (
     <div>
       <form>
-        <label
-          htmlFor='colors'
-          className='label'
-        >
-          Select a Color
-        </label>
+        <label htmlFor='items' className='label'> Select a {props.label}: </label>
         <select
-          name='colors'
-          id='colors'
-          onClick={(e) => props.handleSelectedChange(e.target.value)}
+          name='items'
+          id='items'
+          onChange={(e) => props.handleSelectedChange(e.target.value)}
         >
           {renderedOptions}
         </select>
