@@ -3,6 +3,8 @@ import './App.css';
 import Accordion from './components/Accordion';
 import Search from './components/Search';
 import Translate from './components/Translate';
+import NavigationBar from './components/NavigationBar';
+import Route from './components/Route';
 
 const items = [
   {
@@ -25,14 +27,17 @@ function App() {
       <header className="App-header">
         <h1>Widgets App</h1>
       </header>
-      <div className='component-on-home hidden'>
-        <Accordion items={items} />
-      </div>
-      <div className='component-on-home hidden'>
-        <Search />
-      </div>
+      <NavigationBar />
       <div className='component-on-home'>
-        <Translate />
+        <Route path='/'>
+          <Accordion items={items} />
+        </Route>
+        <Route path='/list'>
+          <Search />
+        </Route>
+        <Route path='/translate'>
+          <Translate />
+        </Route>
       </div>
     </div>
   );
